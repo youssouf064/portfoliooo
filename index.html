@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssouf Seme | Développeur Python</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:white;
+--accent:#3b82f6;
+--shadow:rgba(0,0,0,0.3);
+}
+
+.light{
+--bg:#f1f5f9;
+--card:white;
+--text:black;
+--shadow:rgba(0,0,0,0.1);
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.4s;
+scroll-behavior:smooth;
+}
+
+header{
+text-align:center;
+padding:50px 20px;
+animation:fadeDown 1s ease;
+}
+
+.profile{
+width:140px;
+height:140px;
+border-radius:50%;
+border:4px solid var(--accent);
+object-fit:cover;
+margin-bottom:15px;
+}
+
+h1{margin:0;font-size:34px;}
+.subtitle{opacity:0.7;}
+
+.btn{
+padding:10px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:var(--accent);
+color:white;
+margin:5px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px var(--shadow);
+}
+
+.section{
+width:90%;
+max-width:1100px;
+margin:60px auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:15px;
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px var(--shadow);
+}
+
+/* Compétences */
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+height:8px;
+background:#334155;
+border-radius:5px;
+overflow:hidden;
+}
+
+.progress{
+height:8px;
+background:var(--accent);
+width:0;
+transition:1.5s;
+}
+
+/* Timeline */
+.timeline{
+position:relative;
+margin-left:20px;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:3px;
+height:100%;
+background:var(--accent);
+}
+
+.timeline-item{
+margin-bottom:30px;
+padding-left:20px;
+position:relative;
+}
+
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-8px;
+top:5px;
+width:15px;
+height:15px;
+background:var(--accent);
+border-radius:50%;
+}
+
+/* WhatsApp */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 16px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+footer{
+text-align:center;
+padding:20px;
+opacity:0.6;
+}
+</style>
+</head>
+<body>
+
+<header>
+<img src="image.png" class="profile">
+<h1>Youssouf Seme</h1>
+<p class="subtitle">Développeur Python & Web</p>
+
+<button class="btn" onclick="toggleMode()">Mode clair / sombre</button>
+<a href="CV_Ingenieur_Informatique.pdf" download class="btn">Télécharger CV</a>
+</header>
+
+<!-- Compétences -->
+<section class="section">
+<h2>Compétences</h2>
+
+<div class="skill">
+Python
+<div class="bar"><div class="progress" data-width="90%"></div></div>
+</div>
+
+<div class="skill">
+Flask
+<div class="bar"><div class="progress" data-width="85%"></div></div>
+</div>
+
+<div class="skill">
+HTML / CSS
+<div class="bar"><div class="progress" data-width="80%"></div></div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="bar"><div class="progress" data-width="70%"></div></div>
+</div>
+</section>
+
+<!-- Projets cartes -->
+<section class="section">
+<h2>Projets</h2>
+<div class="cards">
+<div class="card">
+<h3>Application Gestion Dépenses</h3>
+<p>Application Flask avec base SQLite pour gestion personnelle.</p>
+</div>
+
+<div class="card">
+<h3>Portfolio Python</h3>
+<p>Portfolio dynamique avec upload image et base de données.</p>
+</div>
+
+<div class="card">
+<h3>Réservation Bus</h3>
+<p>Système complet réservation billet avec génération PDF.</p>
+</div>
+</div>
+</section>
+
+<!-- Timeline -->
+<section class="section">
+<h2>Mon Parcours</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>2024</h4>
+<p>Création de projets Flask avancés.</p>
+</div>
+
+<div class="timeline-item">
+<h4>2023</h4>
+<p>Développement d'applications web dynamiques.</p>
+</div>
+
+<div class="timeline-item">
+<h4>2022</h4>
+<p>Formation BT Informatique.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Youssouf Seme - Tous droits réservés
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/22241438895" target="_blank" class="whatsapp">💬</a>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+/* Animation compétences */
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".progress").forEach(bar=>{
+const rect=bar.getBoundingClientRect();
+if(rect.top<window.innerHeight){
+bar.style.width=bar.dataset.width;
+}
+});
+});
+
+/* Animation cartes */
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".card").forEach(card=>{
+const rect=card.getBoundingClientRect();
+if(rect.top<window.innerHeight){
+card.classList.add("show");
+}
+});
+});
+</script>
+
+</body>
+</html>
